@@ -2,6 +2,7 @@ const express = require("express");
 const hbs = require("hbs");
 const app = express();
 const path = require("path");
+const players = require("./data");
 
 // Set the view engine to render views & the path to the views
 app.set("view engine", "hbs");
@@ -10,12 +11,12 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Set the path to partials directory
-hbs.registerPartials(__dirname + '/views/partials')
+hbs.registerPartials(__dirname + "/views/partials");
 
 // Generate routes
 app.get("/", (req, res, next) => res.render("index"));
 
-app.get("/players", (req, res, next) => res.render("players"));
+app.get("/players", (req, res, next) => res.render("players", { players }));
 
 app.get("/teams", (req, res, next) => {
   // To skip the layout on this route
