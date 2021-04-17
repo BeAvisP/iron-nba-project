@@ -2,12 +2,30 @@
   <div class="card">
     <img
       class="card-img-top"
-      src="https://clutchpoints.com/wp-content/uploads/2019/08/THUMBNAIL_027.jpg"
+      src="{{photo}}"
       alt=""
     />
     <div class="card-body">
-      <h5 class="card-title">Lebron James</h5>
-      <p class="card-text">CLE</p>
+      <h5 class="card-title">{{name}} {{lastName}}</h5>
+      <p class="card-text">{{team}}</p>
+      <h5>
+        <div class="row">
+          <div class="col-md-6">
+            <p>Year</p>
+          </div>
+          <div class="col-md-6">
+            <p>Average</p>
+          </div>
+          {{#each average}}
+            <div class="col-md-6">
+              <p>{{year}}</p>
+            </div>
+            <div class="col-md-6">
+              <p>{{points}}</p>
+            </div>
+          {{/each}}
+        </div>
+      </h5>
     </div>
   </div>
 </div>

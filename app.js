@@ -16,7 +16,7 @@ hbs.registerPartials(__dirname + "/views/partials");
 // Generate routes
 app.get("/", (req, res, next) => res.render("index"));
 
-app.get("/players", (req, res, next) => res.render("players", { players }));
+app.get("/players", (req, res, next) => res.render("players", players));
 
 app.get("/teams", (req, res, next) => {
   // To skip the layout on this route
