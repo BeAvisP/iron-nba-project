@@ -9,6 +9,9 @@ app.set("views", path.join(__dirname, "views"));
 // Set the path to public directory
 app.use(express.static(path.join(__dirname, "public")));
 
+// Set the path to partials directory
+hbs.registerPartials(__dirname + '/views/partials')
+
 // Generate routes
 app.get("/", (req, res, next) => res.render("index"));
 
